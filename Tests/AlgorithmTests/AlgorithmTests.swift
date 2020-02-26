@@ -30,9 +30,18 @@ final class AlgorithmTests: XCTestCase {
             $0 < 5
         })
     }
+    
+    func testList() {
+        let elements = Array(1...10)
+        let list = List(elements: elements)
+        XCTAssertEqual(list.elements, elements)
+        list.reverse()
+        XCTAssertEqual(list.elements, elements.reversed())
+    }
 
     static var allTests = [
         ("testSort", testSort),
-        ("testTopK", testTopK)
+        ("testTopK", testTopK),
+        ("testList", testList)
     ]
 }
